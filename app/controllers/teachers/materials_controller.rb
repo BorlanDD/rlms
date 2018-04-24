@@ -6,8 +6,9 @@ module Teachers
     expose :material
 
     def create
-      material.topic = topic
-      material.save
+      @material = Material.new(material_params)
+      @material.topic = topic
+      @material.save
     end
 
     def destroy
